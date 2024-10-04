@@ -76,7 +76,7 @@ public class ManagerService {
     @Transactional
     public void deleteManager(AuthUser authUser, long todoId, long managerId) {
 
-        long userId = authUser.getUserId();
+        long userId = authUser.getId();
 
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new InvalidRequestException("User not found"));
